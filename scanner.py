@@ -16,8 +16,8 @@ def getchar(text,pos):
 	# **Σημείο #3**: Προαιρετικά, προσθέστε τις δικές σας ομαδοποιήσεις
 	
 	if c>='0' and c<='9': return 'DIGIT'	# 0..9 grouped together
-	if c=='G' return 'G'
-	if c=='KT' return 'KT'
+	if c=='G' return 'a'
+	if c=='KT' return 'k'
 	if c=='.': return 'DOT'	# dot as a category by itself
 	
 	return c	# anything else
@@ -70,8 +70,8 @@ transitions = { 's0': { 'DIGIT':'s1','DIGIT' : 's2' },
 	       		's6': { 'DIGIT':'s8' },
 	       		's7': { 'DIGIT':'s9' },
 	       		's8': { 'DIGIT':'s10'},
-	       		's9':{ 'KT' : 's13'},
-	       		's10':{ 'G' : 's11'},
+	       		's9':{ 'k' : 's13'},
+	       		's10':{ 'a' : 's11'},
 	       		's11':{ 'DIGIT':'s12'},
 	       		's12':{ 'DIGIT':'s9'},
 	       		
