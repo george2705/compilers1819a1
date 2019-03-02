@@ -77,7 +77,7 @@ transitions = { 's0': { 'DIGIT':'s1','DIGIT' : 's2' },
      		  } 
 
 # **Σημείο #2**: Αντικαταστήστε με το δικό σας λεξικό καταστάσεων αποδοχής
-accepts = { 's13':'WIND_TOKEN'	
+accepts = { 's13':'WIND.TOKEN'	
      	  }
 
 
