@@ -60,15 +60,23 @@ def scan(text,transitions,accepts):
 			
 	
 # **Σημείο #1**: Αντικαταστήστε με το δικό σας λεξικό μεταβάσεων
-transitions = { 's0': { 'DIGIT':'s1' },
-       			's1': { 'DIGIT':'s1','DOT':'s2' },
-       			's2': { 'DIGIT':'s3' },
-       			's3': { 'DIGIT':'s3' }       
+transitions = { 's0': { 'DIGIT':'s1','DIGIT' : 's2' },
+       			's1': { 'DIGIT':'s3' },
+       			's2': { 'DIGIT':'s4' },
+       			's3': { 'DIGIT':'s5' },
+	       		's4': { 'DIGIT':'s6' },
+	       		's5': { 'DIGIT':'s7' },
+	       		's6': { 'DIGIT':'s8' },
+	       		's7': { 'DIGIT':'s9' },
+	       		's8': { 'DIGIT':'s10'},
+	       		's10':{ 'G' : 's11'},
+	       		's11':{ 'DIGIT':'s12'},
+	       		's12':{ 'DIGIT':'s9'},
+	       		's9':{ 'KT' : 's13'}
      		  } 
 
 # **Σημείο #2**: Αντικαταστήστε με το δικό σας λεξικό καταστάσεων αποδοχής
-accepts = { 's1':'INT_TOKEN',
-       		's3':'FLOAT_TOKEN'	
+accepts = { 's13':'WIND_TOKEN'	
      	  }
 
 
